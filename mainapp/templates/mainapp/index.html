@@ -1,0 +1,141 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+
+{% block title %} {{title}} {% endblock  %}
+
+{% block content %}  
+
+<!--Sheet Slider-->
+<div class="sheetSlider sh--default sh-auto">
+    <input id="s1" type="radio" name="slide1" checked/> 
+    <input id="s2" type="radio" name="slide1"/> 
+    <input id="s3" type="radio" name="slide1"/>
+    <div class="sh__content">
+ 
+       <!-- Slider Item -->
+       <div class="sh__item">
+            <img src="{% static 'images/choosing-icons-for-mobile-app.jpg' %}" alt="imgText"/>         
+          <!-- Item Info -->
+          <div class="sh__meta">
+             <span> No te lo puedes perder <a href="#urlPage">with link</a></span>
+                <h1> Desarrollo Movil </h1>
+                <p>Somos una agencia independiente de diseño graﬁco, desarrollo web y marketing 
+                    digital. Disfrutamos trabajar con una amplia gama de clientes, desde innovadores
+                    hasta marcas establecidas y nos enorgullecemos de ser accesibles con nuestros 
+                    clientes.
+                </p>
+                <button class="boton"> Mas ... </button>
+          </div>
+       </div>
+ 
+       <!-- Slider Item -->
+       <div class="sh__item">
+          <img src="{% static 'images/digital-marketing-g110c167fe_1280.jpg' %}"  alt="imgText"/>
+          <!-- Item Info -->
+          <div class="sh__meta">
+            <span> No te lo puedes perder <a href="#urlPage">with link</a></span>
+            <h1> Desarrollo Web </h1>
+            <p>Somos una agencia independiente de diseño graﬁco, desarrollo web y marketing 
+                digital. Disfrutamos trabajar con una amplia gama de clientes, desde innovadores
+                hasta marcas establecidas y nos enorgullecemos de ser accesibles con nuestros 
+                clientes.
+            </p>
+            <button class="boton"> Mas ... </button>
+          </div>
+       </div>
+ 
+       <!-- Slider Item -->
+       <div class="sh__item">
+          <img src="{% static 'images/graphic-designer-sitting-at-desk.jpg'%}" alt="imgText"/>
+          <!-- Item Info -->
+          <div class="sh__meta">
+            <span> No te lo puedes perder <a href="#urlPage">with link</a></span>
+            <h1> Marketing Digital </h1>
+            <p>Somos una agencia independiente de diseño graﬁco, desarrollo web y marketing 
+                digital. Disfrutamos trabajar con una amplia gama de clientes, desde innovadores
+                hasta marcas establecidas y nos enorgullecemos de ser accesibles con nuestros 
+                clientes.
+            </p>
+            <button class="boton"> Mas ... </button>
+          </div>
+       </div>
+ 
+    </div><!-- .sh__content -->
+ 
+    <!--botones-->
+    <div class="sh__btns">
+       <label for="s1"></label>
+       <label for="s2"></label>
+       <label for="s3"></label>
+    </div><!-- .sh__btns -->
+    <!--flechas-->
+    <div class="sh__arrows">
+       <label for="s1"></label>
+       <label for="s2"></label>
+       <label for="s3"></label>
+    </div><!-- .sh__arrows -->
+    
+ </div><!-- .sheetSlider -->
+    {% comment %} <div class="banner">
+        <div class="descripcion">
+       <h1>DISEÑO GRAFICO / DESARROLLO WEB / DESARROLLO MOVIL / MARKETING DIGITAL</h1>
+        <p> No te lo puedes perder </p>
+        <h1> Desarrollo Movil </h1>
+        <p>Somos una agencia independiente de diseño graﬁco, desarrollo web y marketing 
+            digital. Disfrutamos trabajar con una amplia gama de clientes, desde innovadores
+            hasta marcas establecidas y nos enorgullecemos de ser accesibles con nuestros 
+            clientes. Si tiene un proyecto o diseño en mente y te gustaría trabajar connosotros,
+            póngase en contacto con nosotros, nos encantaría saber de ti y ayudarte.
+        </p>
+        <button class="boton"> Mas ... </button>
+        </div>
+    </div> {% endcomment %}
+
+    <div id="servicios">
+        <h1>Servicios</h1>
+        <div class="service">
+        {% for service in servs.all  %}        
+            <div class="items">
+                <a href=" {% url 'servicio' service.0 %}" class="link_servicio">
+                <div class="icono">
+                    <img src=" {% static service.4  %} ">
+                </div>
+                <h2> {{ service.1 }} </h2>
+                <p> {{ service.2 }} </p>
+            </a> 
+            </div>        
+        {% endfor %}  
+        </div>
+    </div>
+    <!-- ######## WORKTEAM ######## -->
+    <div id="workteam">
+        <h1>EQUIPO DE TRABAJO</h1>
+        <p>!Hola! Somos GEGOVA, una agencia de diseño graﬁco, desarrollo web, 
+            movil y marketing digital.Conformado por un grupo de expertos en diferentes 
+            áreas, trabajando en hacer crecer tu empresa mediante herramientas 
+            tecnológicas de nueva generación.</p>
+        <div class="team">
+            <div class="diana">
+                <div class="foto">
+                    <img src="{% static 'images/diana.jpg'%}" alt="Diana Valenzuela">
+                </div>
+                <h2>Marketing Manager</h2>
+            </div>
+            <div class="maria">
+                <div class="foto">
+                    <img src="{% static 'images/maria.jpg' %}" alt="Maria Jose Haydar ">
+                </div>
+                <h2>Diseñadora Grafica</h2>
+            </div>
+            <div class="gerlin">
+                <div class="foto">
+                    <img src=" {% static 'images/gerlin.jpg' %} " alt="Gerlin Gonzalez">
+                </div>
+                <h2>Desarrollador Web</h2>
+                {% comment %} <h3>Ingeniero de Sistemas</h3> {% endcomment %}
+            </div>
+        </div>
+    </div>
+
+{% endblock  %} 
+

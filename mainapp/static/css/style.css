@@ -1,0 +1,494 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat SemiBold';
+}
+
+@font-face {
+    font-family: 'Montserrat ExtraBold';
+    src: url('fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+/* ########### HEADER ########### */
+
+header{
+    background-color: #031d40;
+    font-size: 18px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;    
+}
+
+.logo{
+    width: 234px;
+}
+
+nav{
+    margin-top: 24px;
+}
+
+nav > ul > li > a{
+    display: block;
+    color: #ffcc00;
+    text-decoration: none;
+    padding-bottom: 5px;
+
+}
+
+nav > ul{
+    display: flex;
+}
+
+nav > ul > li{
+    margin-right: 30px;
+    list-style: none;
+    transition: all 200ms;
+}
+
+nav > ul > li:hover{
+    border-bottom: 2px solid #ffcc00;
+    
+}
+
+/* ########### BANNER ########### */
+
+.banner{
+    background-color: #ffcc00;
+    /* background-image: url('../images/choosing-icons-for-mobile-app.jpg'), 
+                        rgba(255,204,0,1)), linear-gradient(red, blue); */
+    background: linear-gradient(to left, rgba(255,255,255,0), 
+            rgba(255,204,0,1)), 
+            url('../images/choosing-icons-for-mobile-app.jpg');
+    
+    /* color: #031d40; */
+    padding: 50px;
+    padding-left: 80px;
+    /* height: 50vh; */
+}
+
+.descripcion {
+    width: 40%;
+    padding: 10px;
+    padding-bottom: 40px;
+    /* border: 1px solid #031d40; */
+}
+
+.sh__meta > h1{
+
+    font-family: 'Montserrat ExtraBold';
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 65px;
+    margin: 4px 0px;
+    text-shadow: 1px 1px 3px black;
+    color: #031d40;
+}
+
+.descripcion > p{
+    color: #031d40;
+    margin-top: 20px;
+}
+
+.boton {
+    padding: 20px 40px;
+    color:#ffcc00;
+    background-color: #031d40;
+    margin-top: 25px;
+    font-size: 18px;
+    border-radius: 25px 25px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px black;
+    
+}
+
+.boton:hover{
+    background-color: #031d40;
+    border: 3px solid #ffcc00;
+    box-shadow: 1px 1px 7px #ffcc00;
+    transition: all 300ms;
+    
+}
+
+/* ########### FIN DE BANNER ########### */
+
+
+
+/* ########### SUBMENU ########### */
+
+nav > ul > li > ul{
+    display: none;
+    position: absolute;
+    text-align: center;
+    /* box-shadow: 1px 1px 3px rgb(0, 37, 3); */
+}
+
+
+nav > ul > li:hover > ul{
+    display: block;
+    margin: 0px ;
+    margin-left: -30px;
+    margin-top: 3px;
+    list-style: none;
+}
+
+
+nav > ul > li:hover > ul > li{
+    background-color: #ffcc00;
+    color: #031d40;
+    line-height: 25px;
+    font-size: 12px;
+    transition: all 300ms;
+   
+}
+
+
+nav > ul > li:hover > ul > li > a{
+    display: block;
+    /* width: 130px; */
+    padding: 10px;
+    text-decoration: none;
+    color: #031d40;
+    transition: all 250ms;
+}
+
+nav > ul > li:hover > ul > li > a:hover{
+    background-color: #031d40;
+    box-shadow: 1px 1px 3px #ffcc00;
+
+}
+
+nav > ul > li:hover > ul > li:hover > a{
+    color: #ffcc00;
+    font-size: 12px;
+}
+
+
+
+
+/* ########### FIN HEADER ########### */
+
+#servicios{
+    background-color: #031d40;
+    color: white;
+    padding: 50px;
+    padding-bottom: 100px ;
+    text-align: center;
+}
+
+#servicios > h1{
+    font-family: 'Montserrat Extrabold';
+    font-size: 42px;
+    color: #ffcc00;
+}
+
+.service{    
+    display: flex;
+    justify-content: space-around;    
+    margin-top: 50px;
+}
+
+.icono img{
+    display: block;
+    width: 100%;   
+    
+}
+
+.icono{
+    width: 21%;
+    border: 3px solid #ffcc00;
+    border-radius: 50% 50%; 
+    margin: 10px auto;
+    padding: 30px;   
+}
+
+.items{
+    width: 100%;
+    align-content: center;
+    font-size: 14px;
+    /* border: 1px solid #ffcc00; */
+}
+
+
+.link_servicio {
+    display: block;
+    text-decoration: none;
+}
+
+.link_servicio h2{
+    color: #ffcc00;
+    width: 85%;
+    margin: 10px auto;
+}
+
+.link_servicio p{
+    width: 85%;
+    color: white;
+    margin: 10px auto;
+}
+
+.link_servicio:hover{
+    background-color: #031d40;    
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    box-shadow: 2px 3px 30px #ffcc00;
+    border-radius: 5px 5px;
+}
+
+.link_servicio:hover > p{
+    color: #ffcc00;
+}
+.link_servicio:hover > h2{
+    color: #ffcc00;
+}
+
+
+/* .link_servicio:hover img{
+    background-color: #031d40;
+} */
+
+
+/* WORKTEAM */
+
+#workteam{
+    background-color: #ffcc00;
+    color: #031d40;
+    padding: 50px;
+}
+
+#workteam h1{
+    text-align: center;
+    font-family: 'Montserrat Extrabold';
+    font-size: 42px;
+    margin-top: 30px;
+}
+
+#workteam p{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+.team{
+    display: flex;
+    justify-content: space-around;
+}
+
+.foto{
+    border: 3px solid #031d40;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 50% 50%;
+    margin: 30px 0px;
+
+}
+
+.team img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+    border-radius: 50% 50%;
+    filter: grayscale(1);
+}
+
+.team h2,
+.team h3{
+    text-align: center;
+}
+
+.team h2{
+    font-family: 'Montserrat Extrabold';
+    font-size: 24px;
+}
+
+
+/* ########### FOOTER ########### */
+
+footer{
+    background-color: #031d40;
+    padding: 100px;
+    padding-bottom: 30px;
+}
+
+.logotipo {
+    display: block;
+    width: 82px;
+    margin: 0px auto;
+    margin-top: -150px;
+}
+
+.cont-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.contact{
+    width: 50%;
+}
+
+.contact h2{
+    color: #ffcc00;
+    font-family: 'Montserrat Extrabold';
+    font-size: 22px;    
+}
+
+.contact p{
+    color: white;
+    font-family: Montserrat;
+    font-size: 20px;   
+    margin-top: 10px; 
+    margin-bottom: 30px;
+
+}
+
+.redes{
+    display: flex;
+}
+
+.redes img{
+    width: 55px;
+    height: 55px;
+    margin-right: 35px;
+}
+
+/* ########### FIN FOOTER ########### */
+
+
+/* ########### PAGINA DE CONTACTOS ########### */
+
+.pag{
+    background-color: #ffcc00;
+}
+
+.pag nav a{
+    color: #031d40;
+}
+
+.pag ul li:hover{
+    border-top: 3px solid #031d40;
+}
+
+.pag-content{
+    display: flex;
+    padding: 50px;
+    padding-top: 130px;
+    padding-bottom: 100px;
+    justify-content: space-around;   
+    /* background: url('../images/brunette-woman-typing-email-on-laptop-computer-while-sitting-at-home-selective-focus-on-hand.jpg'); */
+    /* background: linear-gradient(40deg, #031d40, rgba(0, 0, 0 ,0.0)); */
+    background: linear-gradient(to right, rgba(3, 29, 64, 0.9), rgba(255, 255, 255, 0)),  url('../images/brunette-woman-typing-email-on-laptop-computer-while-sitting-at-home-selective-focus-on-hand.jpg');
+
+}
+
+.pag-contacto,
+.form-contact{
+    width: 40%;
+    padding-bottom: 35px;
+    /* border: 2px solid #ffcc00; */
+}
+
+.pag-contacto h1{
+    color: #ffcc00;
+    font-size: 42px;
+    font-family: 'Montserrat Extrabold';
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px #031d40;
+}
+
+.pag-contacto p{
+    color: white;
+    font-family: Montserrat;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.pag-contacto img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.cont{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    /* border: 1px solid #ffcc00; */
+}
+
+.cont p{
+    padding-top: 5px;
+}
+
+.form-contact input[type=text],
+.form-contact input[type=tel],
+.form-contact input[type=email]{
+    display: block;
+    width: 83%;
+    padding: 15px;
+    margin: 15px 20px;
+}
+
+.form-contact textarea{
+    width: 83%;
+    padding: 20px;
+    margin: 15px;
+}
+
+.form-contact input[type=submit]{
+    display: block;
+    width: 80%;
+    padding: 30px;
+    background-color: #ffcc00;
+    color: #031d40;
+    font-family: 'Montserrat Extrabold';
+    font-size: 18px;
+    margin: 0px auto;
+    box-shadow: 1px 1px 7px #031d40;    
+    cursor: pointer;
+}
+
+label{
+    margin-left: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px #031d40;
+}
+
+/* ########### FIN PAGINA DE CONTACTOS ########### */
+
+.message{
+    display: block;
+    width: 100%;
+    margin: 0px auto;
+    background-color: #ffcc00;
+    color: #031d40;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    text-shadow: 1px 1px 3px black;
+
+}
+
+.ir-arriba {
+	display:none;
+    width: 40px;
+    height: 40px;
+	padding:10px;
+    text-align: center;
+	background-color:#ffcc00;
+    box-shadow: 1px 1px 3px #031d40;
+    border-radius: 50%;
+	font-size:30px;
+	color:#031d40;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+}

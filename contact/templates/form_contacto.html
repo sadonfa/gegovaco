@@ -1,0 +1,39 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %} Contactanos {% endblock%}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages  %}
+            <div class="message">
+                {{ message }}                
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="pag-content">        
+        <div class="pag-contacto">
+            <h1>CONTACTANOS</h1>
+            <p>Escribenos y preguntanos cualquier cosa
+                que quieras saber acerca de nuestros 
+                servicios. Estaremos encantados de asesorarte. 
+            </p>
+
+        <div class="cont"><img src="{% static 'images/llamada-telefonica.png'%}" alt="Llamadas"> <p>(+57) 320 3702872</p> </div> 
+        <div class="cont"> <img src="{% static 'images/email.png'%}" alt="Mail"> <p> info@gegova.co </p></div>
+        <div class="cont"> <img src="{% static 'images/whatsapp.png'%}" alt="Whatsapp"><p> Chat de whatsapp </p> </div>
+
+        </div>
+        <div class="form-contact">
+            <form action=" {% url 'save' %} " method="post">
+
+                {% csrf_token %} 
+
+            {{ formulario }}
+
+                <input type="submit" value="Enviar">
+
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

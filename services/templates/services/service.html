@@ -1,0 +1,11 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+
+{% block title %} {{title}} {% endblock  %}
+
+{% block content %}
+    <h1> {{ services_id.name }} </h1>
+    {% comment %} <img src="{% static 'images/brunette-woman-typing-email-on-laptop-computer-while-sitting-at-home-selective-focus-on-hand.jpg' %}"/> {% endcomment %}
+   <p>{{ services_id.info|safe }}</p>  
+   
+{% endblock  %}

@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/style.css' %} " />
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/sheetslider.min.css' %} " />
+    <link rel="shortcut icon" href="{% static 'images/G.PNG' %}" type="image/x-icon">
+    <script src="{% static 'js/sheetslider.min.js' %}"></script>
+    <title> {% block title %}{% endblock %} | gegova </title>
+</head>
+<body>
+    <span class="ir-arriba">&uarr;</span>
+    <!-- ######## CABECERA ######## -->
+    <header>  
+        <img class="logo" src="{% static 'images/Gegova-05.png'%}" alt="Logo">
+        <nav>
+        <ul>
+            <li>
+                <a href=" {% url 'home'  %}">Inicio</a> 
+            </li>
+            <li>
+                <a href=" {% url 'home' %}#servicios">Servicios</a> 
+                <ul>
+                    {% for servic in servs %}
+                        <li> <a href=" {% url 'servicio' servic.0 %}" > {{ servic.1 }} </a> </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'home' %}#workteam">Nosotros</a> 
+            </li>
+            <li>
+                <a href="{% url 'contac' %}">Contactanos</a> 
+            </li>
+        </ul>    
+        </nav>    
+        
+        </header>
+    
+        <!-- ######## FIN ######## -->
+    <div class="content">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+
+    <!-- ######## FOOTER ########  -->
+
+    <footer>
+        <img class="logotipo" src="{% static 'images/g912.png' %}" alt="Gegova">
+        
+        <div class="cont-footer">
+            <div class="contact">
+                <h2>DISEÑO GRÁFICO / DESARROLLO WEB
+                    DESARROLLO MOVIL / MARKETING DIGITAL</h2>
+                <p>
+                    (+57) 320 3702872<br>
+                    Cartagena de Indias, Colombia <br>
+                    info@gegova.co
+                </p>
+            </div>
+            <div class="redes">
+               <img src="{% static 'images/whatsapp.png' %}" alt="Whatsapp">
+               <a href="https://www.instagram.com/gegova.co/"> <img src="{% static 'images/instagram.png' %}" alt="Instagram"></a> 
+                <img src="{% static 'images/linkedin.png' %}" alt="Linkedin">
+            </div>
+        </div>
+            
+        <nav>
+            <ul>
+                <li>
+                    <a href=" {% url 'home'  %}">Inicio</a> 
+                </li>
+                <li>
+                    <a href="{% url 'home' %}#servicios">Servicios</a> 
+                </li>
+                <li>
+                    <a href="{% url 'home' %}#workteam">Nosotros</a> 
+                </li>
+                <li>
+                    <a href=" {% url 'contac' %} ">Contactanos</a> 
+                </li>
+            </ul>    
+        </nav>  
+
+    </footer>
+
+    <!-- ######## FIN ######## -->
+    <script src="{% static 'js/sheetslider.min.js' %}"></script>
+</body>
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>  
+<script src="{% static 'js/script.js' %}"></script>
+</html>
