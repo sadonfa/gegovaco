@@ -90,12 +90,12 @@ WSGI_APPLICATION = 'gegova.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gegova',
         'USER': 'sadonfa',
         'PASSWORD': 'mujerDEcristal',
         'HOST': 'localhost',
-        'PORT': 3306
+        'PORT': 5432
     }
 }
 
@@ -146,3 +146,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Token
+# 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
