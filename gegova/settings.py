@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +29,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4uch4_*suwvvlg0a$bd36-zz)zj^m6!r5@4q0a#4a%j2d&lr1w'
+# SECRET_KEY = 'django-insecure-4uch4_*suwvvlg0a$bd36-zz)zj^m6!r5@4q0a#4a%j2d&lr1w'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,14 +98,16 @@ WSGI_APPLICATION = 'gegova.wsgi.application'
 #     }
 # }
 
+#_psycopg2
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'gegova',
-        'USER': 'sadonfa',
-        'PASSWORD': 'mujerDEcristal',
-        'HOST': 'localhost',
-        'PORT': 5432
+        'NAME': env('POSTGRESQL_NAME'),
+        'USER':  env('POSTGRESQL_USER'),
+        'PASSWORD': env('POSTGRESQL_PASS'),
+        'HOST': env('POSTGRESQL_HOST'),
+        'PORT': env('POSTGRESQL_PORT'),
     }
 }
 
